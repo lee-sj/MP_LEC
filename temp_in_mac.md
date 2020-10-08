@@ -21,6 +21,8 @@ END
 
 ### lab3-3
 
+// Hint : 체크해야할것은 8번 루프를 도는것인데 그때마다 LSR 을 하고 AND 를 해준다?  ( and R2, R1, #1 R2 가 0 이면 0이고 1이면 그자리가 1이다)
+
 // Assign some 1 byte hex values to r0
 mov r0, #0x34
 
