@@ -15,16 +15,26 @@ __iar_program_start
 main   
         // Write assembly program that sum from 1 to 10 and save the result at r10
 
-        // 1 + 2 + ... + 9 + n = n(n+1)/2 Math 
+        // 1 + 2 + ... + 9 + n = n(n+1)/2 > Math fomula
 
         mov r0, #10 // n
         mov r3, #2
 
-        add r1, r0, #1  // n+1
+        add r1, r0, #1  // =n+1
 
-        mul r2, r0, r1 // n(n+1)
+        mul r2, r0, r1 // =n(n+1)
 
-        sdiv r10, r2, r3 // n(n+1)/2
+        sdiv r10, r2, r3 // =n(n+1)/2
+
+        // Other way ( using loop ) = Hint in Class
+
+        mov r0, #0
+        mov r10, #0
+HERE
+        add r0, r0, #1
+        add r10, r10, r0
+        cmp r0, #10
+        bne HERE
 
 
         // Simple way (only use add, mov)
