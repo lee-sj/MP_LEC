@@ -51,12 +51,12 @@ search
         mov r3, #0
         
 loop
-        ldr r0, {r10}
-        cmp r2, r0
-        it gt
-        movgt r0, r2
-        add r3 r3, #1
-        
-        mov pc, lr
+      //  ldr r0, {r10}
+      //  cmp r2, r0
+      //  it gt
+      //  movgt r0, r2
+      //  add r3 r3, #1
+      //  
+      //  mov pc, lr
 
         END

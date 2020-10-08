@@ -65,7 +65,7 @@
         </option>
         <option>
           <name>OGCoreOrChip</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>GRuntimeLibSelect</name>
@@ -103,7 +103,7 @@
         </option>
         <option>
           <name>OGChipSelectEditMenu</name>
-          <state>STM32F10xxB	ST STM32F10xxB</state>
+          <state>default	None</state>
         </option>
         <option>
           <name>GenLowLevelInterface</name>
@@ -538,7 +538,7 @@
         <debug>1</debug>
         <option>
           <name>IlinkOutputFile</name>
-          <state>lab4-1.out</state>
+          <state>lab4-pp.out</state>
         </option>
         <option>
           <name>IlinkLibIOConfig</name>
@@ -670,11 +670,11 @@
         </option>
         <option>
           <name>IlinkProgramEntryLabelSelect</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>IlinkProgramEntryLabel</name>
-          <state>__iar_program_start</state>
+          <state></state>
         </option>
         <option>
           <name>IlinkNXPLPCChecksum</name>
@@ -1543,7 +1543,7 @@
     </settings>
   </configuration>
   <file>
-    <name>$PROJ_DIR$\lab4-prac-1.s</name>
+    <name>$PROJ_DIR$\asm.s</name>
   </file>
 </project>
 
