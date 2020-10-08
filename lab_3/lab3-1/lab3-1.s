@@ -13,7 +13,6 @@ __iar_program_start
         CODE32
 
 main    NOP
-        B main
 
         // Assign r0 with value 0xFFFF FFF7 (16진수)
         mov r0, #0xFFFFFFF7
@@ -29,10 +28,11 @@ main    NOP
         ASR R4, r1, #4
         
         // Try out LSL instructions on r2 by 4 and save the result r5
-
+        LSL r5, r2, #4
         // Try out ROR on r2 by 4 and save the result in r7
-
+        ROR r7, r2, #4
         // Explain the results on r3 - r7
-
+        
+        NOP
 
         END
