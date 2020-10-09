@@ -12,8 +12,7 @@ __iar_program_start
         SECTION .text : CODE (2)
         CODE32
 
-main    NOP
-
+main 
         // Assign r0 with value 0xFFFF FFF7 (16진수)
         mov r0, #0xFFFFFFF7
 
@@ -31,7 +30,6 @@ main    NOP
         LSL r5, r2, #4
         // Try out ROR on r2 by 4 and save the result in r7
         ROR r7, r2, #4
-        // Explain the results on r3 - r7
         
         NOP
 
