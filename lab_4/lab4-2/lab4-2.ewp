@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 
 <project>
-  <fileVersion>1</fileVersion>
+  <fileVersion>2</fileVersion>
   <configuration>
     <name>Debug</name>
     <toolchain>
@@ -12,7 +12,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>11</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -29,8 +29,8 @@
         </option>
         <option>
           <name>Variant</name>
-          <version>5</version>
-          <state>0</state>
+          <version>8</version>
+          <state>32</state>
         </option>
         <option>
           <name>GEndianMode</name>
@@ -91,12 +91,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>5.10.0.159</state>
-        </option>
-        <option>
-          <name>GeneralMisraRules</name>
-          <version>0</version>
-          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
+          <state>5.20.0.50986</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -111,28 +106,25 @@
           <state>default	None</state>
         </option>
         <option>
-          <name>GenAutoLibEnable</name>
+          <name>GenLowLevelInterface</name>
           <state>1</state>
         </option>
         <option>
-          <name>GenAdditionalLibs</name>
-          <state></state>
+          <name>GEndianModeBE</name>
+          <state>1</state>
         </option>
         <option>
-          <name>GenOverrideProgramEntryLabel</name>
+          <name>OGBufferedTerminalOutput</name>
           <state>0</state>
         </option>
         <option>
-          <name>GenProgramEntryLabelSelect</name>
-          <state>1</state>
+          <name>GenStdoutInterface</name>
+          <state>0</state>
         </option>
         <option>
-          <name>GenProgramEntryLabel</name>
-          <state>__iar_program_start</state>
-        </option>
-        <option>
-          <name>GenLowLevelInterface</name>
-          <state>1</state>
+          <name>GeneralMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
         </option>
       </data>
     </settings>
@@ -140,7 +132,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>19</version>
+        <version>20</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -273,11 +265,6 @@
           <state></state>
         </option>
         <option>
-          <name>CompilerMisraRules</name>
-          <version>0</version>
-          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-        </option>
-        <option>
           <name>CompilerMisraOverride</name>
           <state>0</state>
         </option>
@@ -317,6 +304,11 @@
         <option>
           <name>CCOptLevelSlave</name>
           <state>1</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
         </option>
       </data>
     </settings>
@@ -495,7 +487,7 @@
         <debug>1</debug>
         <option>
           <name>OOCOutputFormat</name>
-          <version>0</version>
+          <version>2</version>
           <state>0</state>
         </option>
         <option>
@@ -541,20 +533,16 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>0</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
+          <name>IlinkOutputFile</name>
+          <state>lab4-2.out</state>
+        </option>
+        <option>
           <name>IlinkLibIOConfig</name>
           <state>1</state>
-        </option>
-        <option>
-          <name>IlinkLibSearchSlave</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IlinkAdditionalLibsSlave</name>
-          <state></state>
         </option>
         <option>
           <name>XLinkMisraHandler</name>
@@ -665,32 +653,115 @@
           <state></state>
         </option>
         <option>
-          <name>IlinkProgramEntrySlave</name>
+          <name>IlinkLowLevelInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAutoLibEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAdditionalLibs</name>
           <state></state>
         </option>
         <option>
-          <name>IlinkLowLevelInterfaceSlave</name>
+          <name>IlinkOverrideProgramEntryLabel</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabelSelect</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabel</name>
+          <state>__iar_program_start</state>
+        </option>
+        <option>
+          <name>IlinkNXPLPCChecksum</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>DoFill</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FillerByte</name>
+          <state>0xFF</state>
+        </option>
+        <option>
+          <name>FillerStart</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>FillerEnd</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>CrcSize</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlign</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlgo</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcPoly</name>
+          <state>0x11021</state>
+        </option>
+        <option>
+          <name>CrcCompl</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcBitOrder</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcInitialValue</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>DoCrc</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkBE8Slave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkBufferedTerminalOutput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkStdoutInterfaceSlave</name>
           <state>1</state>
         </option>
       </data>
     </settings>
     <settings>
-      <name>AR</name>
+      <name>IARCHIVE</name>
       <archiveVersion>0</archiveVersion>
       <data>
         <version>0</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
-          <name>ArInputs</name>
+          <name>IarchiveInputs</name>
           <state></state>
         </option>
         <option>
-          <name>ArOverride</name>
+          <name>IarchiveOverride</name>
           <state>0</state>
         </option>
         <option>
-          <name>ArOutput</name>
+          <name>IarchiveOutput</name>
           <state>###Unitialized###</state>
         </option>
       </data>
@@ -711,7 +782,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>11</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -728,7 +799,7 @@
         </option>
         <option>
           <name>Variant</name>
-          <version>5</version>
+          <version>8</version>
           <state>0</state>
         </option>
         <option>
@@ -793,11 +864,6 @@
           <state>5.10.0.159</state>
         </option>
         <option>
-          <name>GeneralMisraRules</name>
-          <version>0</version>
-          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-        </option>
-        <option>
           <name>GeneralEnableMisra</name>
           <state>0</state>
         </option>
@@ -810,28 +876,25 @@
           <state>default	None</state>
         </option>
         <option>
-          <name>GenAutoLibEnable</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>GenAdditionalLibs</name>
-          <state></state>
-        </option>
-        <option>
-          <name>GenOverrideProgramEntryLabel</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>GenProgramEntryLabelSelect</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>GenProgramEntryLabel</name>
-          <state>__iar_program_start</state>
-        </option>
-        <option>
           <name>GenLowLevelInterface</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>GEndianModeBE</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>OGBufferedTerminalOutput</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GenStdoutInterface</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>GeneralMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
         </option>
       </data>
     </settings>
@@ -839,7 +902,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>19</version>
+        <version>20</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -972,11 +1035,6 @@
           <state></state>
         </option>
         <option>
-          <name>CompilerMisraRules</name>
-          <version>0</version>
-          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
-        </option>
-        <option>
           <name>CompilerMisraOverride</name>
           <state>0</state>
         </option>
@@ -1016,6 +1074,11 @@
         <option>
           <name>CCOptLevelSlave</name>
           <state>3</state>
+        </option>
+        <option>
+          <name>CompilerMisraRules98</name>
+          <version>0</version>
+          <state>1000111110110101101110011100111111101110011011000101110111101101100111111111111100110011111001110111001111111111111111111111111</state>
         </option>
       </data>
     </settings>
@@ -1194,7 +1257,7 @@
         <debug>0</debug>
         <option>
           <name>OOCOutputFormat</name>
-          <version>0</version>
+          <version>2</version>
           <state>0</state>
         </option>
         <option>
@@ -1240,20 +1303,16 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>0</version>
+        <version>6</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
+          <name>IlinkOutputFile</name>
+          <state>###Unitialized###</state>
+        </option>
+        <option>
           <name>IlinkLibIOConfig</name>
           <state>1</state>
-        </option>
-        <option>
-          <name>IlinkLibSearchSlave</name>
-          <state>1</state>
-        </option>
-        <option>
-          <name>IlinkAdditionalLibsSlave</name>
-          <state></state>
         </option>
         <option>
           <name>XLinkMisraHandler</name>
@@ -1364,32 +1423,115 @@
           <state></state>
         </option>
         <option>
-          <name>IlinkProgramEntrySlave</name>
+          <name>IlinkLowLevelInterfaceSlave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAutoLibEnable</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkAdditionalLibs</name>
           <state></state>
         </option>
         <option>
-          <name>IlinkLowLevelInterfaceSlave</name>
+          <name>IlinkOverrideProgramEntryLabel</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabelSelect</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkProgramEntryLabel</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkNXPLPCChecksum</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>DoFill</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>FillerByte</name>
+          <state>0xFF</state>
+        </option>
+        <option>
+          <name>FillerStart</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>FillerEnd</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>CrcSize</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlign</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcAlgo</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcPoly</name>
+          <state>0x11021</state>
+        </option>
+        <option>
+          <name>CrcCompl</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcBitOrder</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CrcInitialValue</name>
+          <state>0x0</state>
+        </option>
+        <option>
+          <name>DoCrc</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkBE8Slave</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkBufferedTerminalOutput</name>
+          <state>1</state>
+        </option>
+        <option>
+          <name>IlinkStdoutInterfaceSlave</name>
           <state>1</state>
         </option>
       </data>
     </settings>
     <settings>
-      <name>AR</name>
+      <name>IARCHIVE</name>
       <archiveVersion>0</archiveVersion>
       <data>
         <version>0</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
-          <name>ArInputs</name>
+          <name>IarchiveInputs</name>
           <state></state>
         </option>
         <option>
-          <name>ArOverride</name>
+          <name>IarchiveOverride</name>
           <state>0</state>
         </option>
         <option>
-          <name>ArOutput</name>
+          <name>IarchiveOutput</name>
           <state>###Unitialized###</state>
         </option>
       </data>
