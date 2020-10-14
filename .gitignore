@@ -54,3 +54,6 @@ Backup*
 *.bak
 
 # End of https://www.toptal.com/developers/gitignore/api/iarembeddedworkbench
+
+
+.DS_Store
