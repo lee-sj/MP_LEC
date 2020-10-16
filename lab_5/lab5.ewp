@@ -1611,7 +1611,7 @@
     </file>
   </group>
   <file>
-    <name>$PROJ_DIR$\main.c</name>
+    <name>$PROJ_DIR$\lab5-1\main.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\stm32f10x_conf.h</name>

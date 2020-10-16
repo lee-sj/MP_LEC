@@ -30,7 +30,7 @@ int main(void)
        LED_data<<=1;
     
     GPIO_SetBits(GPIOA, LED_data);
-    Delay(0xEFFFF);
+    Delay(0xAFFFF);
   }
   
 }

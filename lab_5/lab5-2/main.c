@@ -24,30 +24,15 @@ int main(void)
   
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0| GPIO_Pin_1 | GPIO_Pin_2| GPIO_Pin_3| 
   GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT_PP;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
 
   while (1)  {
 
     switch_value = GPIO_ReadInputData(GPIOC);
-   // GPIO_SetBits(GPIOA, switch_value);
     GPIO_Write(GPIOA, switch_value);
   
-   // if(LED_data == 0x0080)
-   //   LED_data = 0x0001;
-   //  else
-   //    LED_data<<=1;
-
-    //GPIO_ResetBits(GPIOA, switch_value);
-    Delay(0xEFFFF);
   }
   
 }
-
-
-void Delay(vu32 nCount)
-{
-  for(; nCount != 0; nCount--);
-}
-
 
