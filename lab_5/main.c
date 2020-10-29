@@ -23,12 +23,12 @@ int main(void)
   while (1)  {
 
     GPIO_ResetBits(GPIOA, LED_data);
-  
+
     if(LED_data == 0x0080)
       LED_data = 0x0001;
      else
        LED_data<<=1;
-
+    
     GPIO_SetBits(GPIOA, LED_data);
     Delay(0xAFFFF);
   }
