@@ -12,9 +12,9 @@ int main(void)
   GPIO_InitTypeDef GPIO_InitStructure;
 
   unsigned char FND_DATA_TBL[]={0x3F,0X06,0X5B,0X4F,0X66,0X6D,0X7C,0X07,0X7F,0X67,0X77,0X7C,0X39,0X5E,0X79,0X71,0X08,0X80};
-  unsigned char cnt=0,i;
+  unsigned char cnt=0,i,j;
 
-  unsigned int Pin_info = PIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7; 
+  unsigned int Pin_info = GPIO_Pin_0 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7; 
 
   Init_STM32F103();
 
@@ -33,8 +33,17 @@ int main(void)
 
   while (1)  {
 
-    GPIO_Write(GPIOC, FND_DATA_TBL[0]);
-    Delay(0xFFFF);
+    //GPIO_Write(GPIOC, FND_DATA_TBL[1]);
+    //GPIO_Write(GPIOC, 0x04);
+    //GPIO_Write(GPIOC, 0x08);
+    
+    if (i>17)
+      i=0;
+    else
+      i++;
+    GPIO_Write(GPIOC, FND_DATA_TBL[i]);
+    for(j=0;j<30;j++)
+      Delay(0xFFFF);
 
   }
   
