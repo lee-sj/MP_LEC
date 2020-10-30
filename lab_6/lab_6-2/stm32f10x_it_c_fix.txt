@@ -1,0 +1,38 @@
+
+extern unsigned char time_10ms,time_100ms,time_1s,time_10s;
+extern char Time_STOP ;
+
+/*******************************************************************************
+* Function Name  : EXTI0_IRQHandler
+* Description    : This function handles External interrupt Line 0 request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void EXTI0_IRQHandler(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+  {
+    Time_STOP = (Time_STOP!=0)?0:1;
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
+}
+
+/*******************************************************************************
+* Function Name  : EXTI1_IRQHandler
+* Description    : This function handles External interrupt Line 1 request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void EXTI1_IRQHandler(void)
+{
+      if(EXTI_GetITStatus(EXTI_Line1) != RESET)
+  {
+    time_10ms=0;
+    time_100ms=0;
+    time_1s=0;
+    time_10s=0;
+    EXTI_ClearITPendingBit(EXTI_Line1);
+  }
+}
