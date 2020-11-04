@@ -213,10 +213,10 @@ void RCC_IRQHandler(void)
 
 }
 
-extern u8 flag;
+//extern u8 flag;
 
-extern unsigned char time_10ms,time_100ms,time_1s,time_10s;
-extern char Time_STOP ;
+//extern unsigned char time_10ms,time_100ms,time_1s,time_10s;
+//extern char Time_STOP ;
 
 /*******************************************************************************
 * Function Name  : EXTI0_IRQHandler
@@ -229,7 +229,7 @@ void EXTI0_IRQHandler(void)
 {
     if(EXTI_GetITStatus(EXTI_Line0) != RESET)
   {
-    Time_STOP = (Time_STOP!=0)?0:1;
+//    Time_STOP = (Time_STOP!=0)?0:1;
     EXTI_ClearITPendingBit(EXTI_Line0);
   }
 }
@@ -245,10 +245,10 @@ void EXTI1_IRQHandler(void)
 {
       if(EXTI_GetITStatus(EXTI_Line1) != RESET)
   {
-    time_10ms=0;
-    time_100ms=0;
-    time_1s=0;
-    time_10s=0;
+//    time_10ms=0;
+//    time_100ms=0;
+//    time_1s=0;
+//    time_10s=0;
     EXTI_ClearITPendingBit(EXTI_Line1);
   }
 }
@@ -478,6 +478,9 @@ void TIM1_CC_IRQHandler(void)
 {
 }
 
+
+
+extern unsigned char time_10m,time_1m,time_10s,time_1s;
 /*******************************************************************************
 * Function Name  : TIM2_IRQHandler
 * Description    : This function handles TIM2 global interrupt request.
@@ -488,6 +491,33 @@ void TIM1_CC_IRQHandler(void)
 void TIM2_IRQHandler(void)
 {
 //  Timer1IntrHandler();
+  
+  if(TIM_GetFlagStatus(TIM2,TIM_IT_Update)==SET){
+    
+    TIM_ClearITPendingBit(TIM2,TIM_FLAG_Update);
+    
+    time_1s++;
+    
+    if(time_1s == 10){
+      time_1s = 0;
+      time_10s++ ;
+    }
+    
+    if(time_10s == 6){
+      time_10s = 0;
+      time_1m++ ;
+    }
+    
+    if(time_1m == 10){
+      time_1m = 0;
+      time_10m++ ;
+    }
+
+    if(time_10m == 6){
+      time_10m = 0;
+    }
+  }
+  
 }
 
 /*******************************************************************************
