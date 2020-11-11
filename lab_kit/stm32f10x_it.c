@@ -200,7 +200,6 @@ void FLASH_IRQHandler(void)
 {
 }
 
-
 /*******************************************************************************
 * Function Name  : RCC_IRQHandler
 * Description    : This function handles RCC interrupt request. 
@@ -210,13 +209,7 @@ void FLASH_IRQHandler(void)
 *******************************************************************************/
 void RCC_IRQHandler(void)
 {
-
 }
-
-//extern u8 flag;
-
-//extern unsigned char time_10ms,time_100ms,time_1s,time_10s;
-//extern char Time_STOP ;
 
 /*******************************************************************************
 * Function Name  : EXTI0_IRQHandler
@@ -227,11 +220,6 @@ void RCC_IRQHandler(void)
 *******************************************************************************/
 void EXTI0_IRQHandler(void)
 {
-    if(EXTI_GetITStatus(EXTI_Line0) != RESET)
-  {
-//    Time_STOP = (Time_STOP!=0)?0:1;
-    EXTI_ClearITPendingBit(EXTI_Line0);
-  }
 }
 
 /*******************************************************************************
@@ -243,14 +231,6 @@ void EXTI0_IRQHandler(void)
 *******************************************************************************/
 void EXTI1_IRQHandler(void)
 {
-      if(EXTI_GetITStatus(EXTI_Line1) != RESET)
-  {
-//    time_10ms=0;
-//    time_100ms=0;
-//    time_1s=0;
-//    time_10s=0;
-    EXTI_ClearITPendingBit(EXTI_Line1);
-  }
 }
 
 /*******************************************************************************
@@ -479,7 +459,6 @@ void TIM1_CC_IRQHandler(void)
 }
 
 
-
 extern unsigned char time_10m,time_1m,time_10s,time_1s;
 /*******************************************************************************
 * Function Name  : TIM2_IRQHandler
@@ -519,7 +498,6 @@ void TIM2_IRQHandler(void)
   }
   
 }
-
 /*******************************************************************************
 * Function Name  : TIM3_IRQHandler
 * Description    : This function handles TIM3 global interrupt request.
