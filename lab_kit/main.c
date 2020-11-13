@@ -1,7 +1,7 @@
 #include "stm32f10x_lib.h"
 #include "System_func.h"
 
-unsigned char time_10m=0,time_1m=0,time_10s=0,time_1s=0;
+unsigned char time_10m=0,time_1m=0,time_10s=0,time_1s=0, count=0;
 void Delay(vu32 nCount);
 
 int main(void)
@@ -32,7 +32,7 @@ int main(void)
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
   TIM2_TimeBaseInitStruct.TIM_Prescaler = 7200 -1;
   TIM2_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
-  TIM2_TimeBaseInitStruct.TIM_Period = 10000 -1;
+  TIM2_TimeBaseInitStruct.TIM_Period = 20000 -1;
   TIM2_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
   TIM_TimeBaseInit(TIM2,&TIM2_TimeBaseInitStruct);
   TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE);
