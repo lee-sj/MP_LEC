@@ -11,12 +11,10 @@ void Change_FREQ(unsigned int freq);
 
 void STOP_FREQ();
 
-int main(void){
+GPIO_ReadInputDataBit(GPIOC,0x00FFint main(void){
   Init_STM32F103();
 
-  u16 key_vlaue = 0; //입력되는 키값을 저장하는 변수
-  u16 freq_value = 0; // 각키에 대한 주파수값을저장하는 변수
-
+  u16 freq_value=0, key_value = 0; //?�력?�는 ?�값???�?�하??변??  u16 freq_value = 0; // 각키???�??주파?�값?��??�하??변??
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC , ENABLE);
@@ -25,14 +23,17 @@ int main(void){
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(GPIOC, &GPIO_InitStructure);
   
-  
-  
-  
+  TIM_TimeBaseStructure.TIM_Period = 0;
+  TIM_TimeBaseStructure.TIM_Prescaler = 500;
+  TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
   TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
   
-  
-  
-  
+  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+  TIM_OCInitStructure.TIM_Channel = TIM_Channel_1;
+  TIM_OCInitStructure.TIM_Pulse = 0;
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;
+  TIM_OCInit(TIM3, &TIM_OCInitStructure);
   
   TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
   TIM_ARRPreloadConfig(TIM3, ENABLE);
@@ -41,8 +42,8 @@ int main(void){
     
     while(!GPIO_ReadInputDataBit(GPIOC,0x00FF));
     
-    key_vlaue = 
-    freq_value = key2DoReMi(key_vlaue);
+    key_value = GPIO_ReadInputData(GPIOC)&0x00FF;
+    freq_value = key2DoReMi(key_value);
     
     Change_FREQ(freq_value);
     while(GPIO_ReadInputDataBit(GPIOC,0x00FF));
@@ -68,6 +69,7 @@ void Change_FREQ(unsigned int freq){
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 
   TIM_Cmd(TIM3, DISABLE);
+  
   TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Disable);
   TIM_ARRPreloadConfig(TIM3, DISABLE);
 

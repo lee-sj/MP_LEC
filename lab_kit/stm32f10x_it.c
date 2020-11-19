@@ -459,7 +459,6 @@ void TIM1_CC_IRQHandler(void)
 }
 
 
-extern unsigned char time_10m,time_1m,time_10s,time_1s,count;
 /*******************************************************************************
 * Function Name  : TIM2_IRQHandler
 * Description    : This function handles TIM2 global interrupt request.
@@ -471,38 +470,6 @@ void TIM2_IRQHandler(void)
 {
 //  Timer1IntrHandler();
   
-  if(TIM_GetFlagStatus(TIM2,TIM_IT_Update)==SET){
-    
-    if(count ==0){
-      count++;
-    
-      
-    }else{
-      TIM_ClearITPendingBit(TIM2,TIM_FLAG_Update);
-      count=0; 
-    }
-    
-    time_1s++;
-    
-    if(time_1s == 10){
-      time_1s = 0;
-      time_10s++ ;
-    }
-    
-    if(time_10s == 6){
-      time_10s = 0;
-      time_1m++ ;
-    }
-    
-    if(time_1m == 10){
-      time_1m = 0;
-      time_10m++ ;
-    }
-
-    if(time_10m == 6){
-      time_10m = 0;
-    }
-  }
   
 }
 /*******************************************************************************
