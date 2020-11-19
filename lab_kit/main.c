@@ -1,9 +1,8 @@
+
 #include "stm32f10x_lib.h"
 #include "System_func.h"
 
-TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
-TIM_OCInitTypeDef TIM_OCInitStructure;
-GPIO_InitTypeDef GPIO_InitStructure;
+
 
 unsigned int key2DoReMi(unsigned int key);
 
@@ -11,7 +10,13 @@ void Change_FREQ(unsigned int freq);
 
 void STOP_FREQ();
 
-GPIO_ReadInputDataBit(GPIOC,0x00FFint main(void){
+GPIO_InitTypeDef GPIO_InitStructure;  
+TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+TIM_OCInitTypeDef TIM_OCInitStructure;
+  
+int main(void){
+
+
   Init_STM32F103();
 
   u16 freq_value=0, key_value = 0;    
