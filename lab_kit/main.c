@@ -14,7 +14,7 @@ void STOP_FREQ();
 GPIO_ReadInputDataBit(GPIOC,0x00FFint main(void){
   Init_STM32F103();
 
-  u16 freq_value=0, key_value = 0; //?ÖÎ†•?òÎäî ?§Í∞í???Ä?•Ìïò??Î≥Ä??  u16 freq_value = 0; // Í∞ÅÌÇ§???Ä??Ï£ºÌåå?òÍ∞í?ÑÏ??•Ìïò??Î≥Ä??
+  u16 freq_value=0, key_value = 0;    
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
 
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_GPIOC , ENABLE);
