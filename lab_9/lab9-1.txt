@@ -1,8 +1,13 @@
 #include "stm32f10x_lib.h" 
 #include"system_func.h"
 
+void putch(u8 c);
+void puts(u8 *s);
+
 int main(void) {
+  
   Init_STM32F103();
+  
   USART_InitTypeDef USART_InitStructure;
   GPIO_InitTypeDef GPIO_InitStructure;
   
@@ -27,12 +32,18 @@ int main(void) {
   USART_InitStructure.USART_CPOL = USART_CPOL_Low;
   USART_InitStructure.USART_CPHA = USART_CPHA_2Edge;
   USART_InitStructure.USART_LastBit = USART_LastBit_Disable;
+  
   USART_Init(USART1, &USART_InitStructure);
+  
+  USART_Cmd(USART1,ENABLE);
 
+  puts("201302386 lee sungjun\n\r");
+  putch('h');
   putch('e');
   putch('l');
   putch('l');
-  putch('o'); puts("\n\rWorld!!");
+  putch('o'); 
+  puts("\n\rWorld!!");
   while (1);
   
   }
@@ -43,8 +54,7 @@ void putch(u8 c) {
 }
 
 void puts(u8 *s) {
-  while (*s != '\0')
-  {
+  while (*s != '\0'){
     putch(*s);
     s ++; 
   }
