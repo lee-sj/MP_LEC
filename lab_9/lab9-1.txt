@@ -29,7 +29,11 @@ int main(void) {
   USART_InitStructure.USART_LastBit = USART_LastBit_Disable;
   USART_Init(USART1, &USART_InitStructure);
 
-  
+  putch('e');
+  putch('l');
+  putch('l');
+  putch('o'); puts("\n\rWorld!!");
+  while (1);
   
   }
 
