@@ -1,3 +1,4 @@
+
 #include "stm32f10x_lib.h" 
 #include"system_func.h"
 
@@ -38,8 +39,8 @@ int main(void) {
   
   USART_Cmd(USART1,ENABLE);
 
-  puts("Hello\n\r");
-  puts("Enter Name : ");
+  puts("Hello");
+  puts("\n\rEnter Name : ");
   while (1){
     u8 receiveChar = getch();
     putch(receiveChar);
