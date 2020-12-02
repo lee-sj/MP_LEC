@@ -1692,6 +1692,18 @@
     </group>
   </group>
   <file>
+    <name>$PROJ_DIR$\keypad.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\lcd.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\lcd.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\lcdconf.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
