@@ -218,10 +218,17 @@ void RCC_IRQHandler(void)
 * Output         : None
 * Return         : None
 *******************************************************************************/
+extern char move_flag;
+extern char dir_flag;
+
 void EXTI0_IRQHandler(void)
 {
+  if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+  {
+    move_flag = (move_flag!=0)? 0 : 1;
+    EXTI_ClearITPendingBit(EXTI_Line0);
+  }
 }
-
 /*******************************************************************************
 * Function Name  : EXTI1_IRQHandler
 * Description    : This function handles External interrupt Line 1 request.
@@ -231,6 +238,11 @@ void EXTI0_IRQHandler(void)
 *******************************************************************************/
 void EXTI1_IRQHandler(void)
 {
+  if(EXTI_GetITStatus(EXTI_Line1) != RESET)
+  {
+    dir_flag = (dir_flag!=0)? 0 : 1;
+    EXTI_ClearITPendingBit(EXTI_Line1);
+  }
 }
 
 /*******************************************************************************
