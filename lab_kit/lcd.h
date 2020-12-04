@@ -39,14 +39,12 @@ void lcdControlWrite(u8 data);
 u8 lcdControlRead(void);
 void lcdDataWrite(u8 data);
 u8 lcdDataRead(void);
+
 void lcdInit();
 void lcdHome(void);
 void lcdClear(void);
 void lcdGotoXY(u8 x, u8 y);
 void lcdPrintData(char *data, u8 nBytes);
 void lcdPrint(char *data);
-
-
-
 
 #endif

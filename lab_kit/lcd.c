@@ -34,11 +34,15 @@ void lcdBusyWait(void){
   GPIO_SetBits(LCD_DATA, 0x00FF ); //�ʱ� Ǯ��
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_RW | LCD_CTRL_E); // set R/W to "read"
   LCD_DELAY; // wait
+  
   while((GPIO_ReadInputDataBit(LCD_DATA, 1<<LCD_BUSY))) {
     GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_E); // clear "E" line
+  
     LCD_DELAY; // wait
     LCD_DELAY; // wait
+  
     GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_E); // set "E" line
+  
     LCD_DELAY; // wait
     LCD_DELAY; // wait
   }
@@ -59,60 +63,83 @@ void lcdControlWrite(u8 data){
   
   GPIO_ResetBits(LCD_DATA, 0x00FF);
   GPIO_SetBits(LCD_DATA, data); // output data, 8bits
+  
   LCD_DELAY; // wait
   LCD_DELAY; // wait
+  
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_E);// clear "E" line
+  
   LCD_DELAY; // wait
   LCD_DELAY;
 }
 
 u8 lcdControlRead(void){
   u8 data;
+  
   lcdBusyWait(); // wait until LCD not busy
+  
   GPIO_LCD.GPIO_Pin = 0x00FF;
   GPIO_LCD.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_LCD.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(LCD_DATA, &GPIO_LCD);
+  
   GPIO_SetBits(LCD_DATA, 0x00FF ); //�ʱ� Ǯ��
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_RS); // set RS to "control"
+  
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_RW); // set R/W to "read"
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_E); // set "E" line
+  
   LCD_DELAY; // wait
   LCD_DELAY; // wait
+  
   data = (GPIO_ReadInputData(LCD_DATA)); // input data, 8bits
+  
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_E); // clear "E" line
+  
   return data;
 }
 void lcdDataWrite(u8 data){
   lcdBusyWait(); // wait until LCD not busy
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_RS); // set RS to "data"
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_RW); // set R/W to "write"
+  
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_E); // set "E" line
   GPIO_LCD.GPIO_Pin = 0x00FF;
   GPIO_LCD.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_LCD.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(LCD_DATA, &GPIO_LCD);
+
   GPIO_ResetBits(LCD_DATA,0x00FF);
   GPIO_SetBits(LCD_DATA, data);
+
   LCD_DELAY; // wait
   LCD_DELAY; // wait
+
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_E);
 }
 u8 lcdDataRead(void){
   u8 data;
+
   lcdBusyWait(); // wait until LCD not busy
+
   GPIO_LCD.GPIO_Pin = 0x00FF;
   GPIO_LCD.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_LCD.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(LCD_DATA, &GPIO_LCD);
+
   GPIO_SetBits(LCD_DATA, 0x00FF ); //�ʱ� Ǯ��
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_RS); // set RS to "control"
+
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_RW); // set R/W to "read"
   GPIO_SetBits(LCD_CTRL_PORT, LCD_CTRL_E); // set "E" line
+
   LCD_DELAY; // wait
   LCD_DELAY; // wait
+
   data = (GPIO_ReadInputData(LCD_DATA)); // input data, 8bits
+
   GPIO_ResetBits(LCD_CTRL_PORT, LCD_CTRL_E); // clear "E" line
+
   return data; 
 }
 
