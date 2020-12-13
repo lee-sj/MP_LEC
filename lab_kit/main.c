@@ -10,13 +10,11 @@ u8 PASSWD[]="1234";
 void INT_Configuration(void);
 void Timer3_Delay_init();
 void Timer3_delay_ms(u16 time);
-
 void passcheck(u8 data);
 u8 pass_check(u8 pass[]);
 void reset(void);
 void back_pass(void);
 void delay_ms(u16 time);
-
 void rotate_motor(u8 direction);
 
 void init_keypad(void){
@@ -27,7 +25,6 @@ void init_keypad(void){
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
   GPIO_Init(LINE_PORT, &GPIO_InitStructure);
-
   GPIO_InitStructure.GPIO_Pin = IN_1 | IN_2 | IN_3| IN_4;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_Init(IN_PORT, &GPIO_InitStructure);
@@ -43,9 +40,9 @@ void init_keypad(void){
 int main(void){
 
   Init_STM32F103();
-  
-  Timer3_Delay_init();
 
+  Timer3_Delay_init();
+  
   rotate_motor(1);
   
   delay_ms(1000);
