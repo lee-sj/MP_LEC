@@ -96,7 +96,6 @@ void Timer3_Delay_init(){
   TIM_TimeBaseInitTypeDef TIM3_TimeBaseInitStruct;
   
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
-  
   TIM3_TimeBaseInitStruct.TIM_Prescaler = 7200-1;
   TIM3_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
   TIM3_TimeBaseInitStruct.TIM_Period = 4-1;
