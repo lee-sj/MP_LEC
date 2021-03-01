@@ -127,3 +127,4 @@ unsigned int key2DoReMi(unsigned int key){
   }
   return _ret;
 }
+// 201302386@hufs.ac.kr lee-sj

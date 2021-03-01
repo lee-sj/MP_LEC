@@ -174,3 +174,4 @@ void reset(void){
  delay_ms(1000); 
  init_lcdinfo();
 }
+// 201302386@hufs.ac.kr lee-sj

@@ -48,3 +48,4 @@ void lcdPrintData(char *data, u8 nBytes);
 void lcdPrint(char *data);
 
 #endif
+// 201302386@hufs.ac.kr lee-sj

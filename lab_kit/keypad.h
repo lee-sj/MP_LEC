@@ -19,3 +19,4 @@
 #define LINE_4 GPIO_Pin_7
 
 #define LINE_MASK (LINE_1 | LINE_2 | LINE_3 | LINE_4)
+// 201302386@hufs.ac.kr lee-sj

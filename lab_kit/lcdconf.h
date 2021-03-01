@@ -22,3 +22,4 @@
 #define LCD_DELAY asm ("nop\n nop\n nop\n nop\n nop\n nop\n nop\n nop\n nop\n nop\n nop\n nop\n");
 
 #endif
+// 201302386@hufs.ac.kr lee-sj

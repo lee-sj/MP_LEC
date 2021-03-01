@@ -37,7 +37,7 @@ main
        // mov r2, #1
        // cmp r0, r1
         
-       // it eq // if then ÀÌÄ÷
+       // it eq // if then ï¿½ï¿½ï¿½ï¿½
        // moveq r2, #2
 
 
@@ -60,3 +60,4 @@ loop
       //  mov pc, lr
 
         END
+        // 201302386@hufs.ac.kr lee-sj

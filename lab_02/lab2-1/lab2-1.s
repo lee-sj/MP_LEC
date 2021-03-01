@@ -7,7 +7,7 @@
         CODE32
         
 __iar_program_start
-        B       main // branch - ºÐ±â  -> main ÀÌ¶ó´Â °÷À» ÀÌµ¿ 
+        B       main // branch - ë¶„ê¸°  -> main ì´ë¼ëŠ” ê³³ì„ ì´ë™ 
 
         
         SECTION .text : CODE (2)
@@ -39,18 +39,19 @@ main
         ldr r7, [r4, #8]
         ldr r8, [r4, #12]
         
-        NOP  // ?? ÀÌ°Ô ¾øÀ¸¸é Á¤»óÀûÀ¸·Î ½ÇÇàÀ» ¾ÈÇÏ´Â°¡ ¿Ö?? 
+        NOP  // ?? ì´ê²Œ ì—†ìœ¼ë©´ ì •ìƒì ìœ¼ë¡œ ì‹¤í–‰ì„ ì•ˆí•˜ëŠ”ê°€ ì™œ?? 
         
-        // memory ´Â LSB = 
+        // memory ëŠ” LSB = 
 
-        // NOP  // no operation , ÇÑ°³ÀÇ ¹®ÀåÀÌ ÇÑ°³ÀÇ ½ÇÇà 
-        // B main // branch main À§¿Í °°Àº ÄÚµå 
+        // NOP  // no operation , í•œê°œì˜ ë¬¸ìž¥ì´ í•œê°œì˜ ì‹¤í–‰ 
+        // B main // branch main ìœ„ì™€ ê°™ì€ ì½”ë“œ 
         
         
-        // º¹ÀâÇÑ 32bit ¸¦ »ç¿ëÇÑ´Ù¸é? ??? 
+        // ë³µìž¡í•œ 32bit ë¥¼ ì‚¬ìš©í•œë‹¤ë©´? ??? 
         // ldr r5, =0x22222222        
         
         // disassembly 
-        // ¸Þ¸ð¸® ¿µ¿ª   ½ÇÁ¦ ÄÚµå   ÀÓº£µå ÄÚµå  
+        // ë©”ëª¨ë¦¬ ì˜ì—­   ì‹¤ì œ ì½”ë“œ   ìž„ë² ë“œ ì½”ë“œ  
 
         END
+        // 201302386@hufs.ac.kr lee-sj

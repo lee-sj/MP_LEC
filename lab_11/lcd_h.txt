@@ -50,3 +50,4 @@ void lcdPrint(char *data);
 
 
 #endif
+// 201302386@hufs.ac.kr lee-sj

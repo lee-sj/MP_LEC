@@ -203,3 +203,4 @@ void lcdPrint(char *data){
   
   }
 }
+// 201302386@hufs.ac.kr lee-sj
